@@ -1,0 +1,6 @@
+import nltk
+nltk.download('punkt')
+user_input = input("Enter a sentence: ")
+tokens = nltk.word_tokenize(user_input)
+print("Tokens:")
+print(tokens)
