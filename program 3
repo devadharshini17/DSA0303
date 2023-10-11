@@ -1,0 +1,9 @@
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+user_input = input("Enter a sentence: ")
+words = nltk.word_tokenize(user_input)
+pos_tags = nltk.pos_tag(words)
+print("Parts of Speech:")
+for word, pos in pos_tags:
+    print(f"{word}: {pos}")
