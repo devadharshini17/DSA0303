@@ -1,0 +1,9 @@
+import nltk
+from nltk.stem import PorterStemmer
+nltk.download('punkt')
+stemmer = PorterStemmer()
+user_input = input("Enter a sentence: ")
+words = nltk.word_tokenize(user_input)
+stemmed_words = [stemmer.stem(word) for word in words]
+stemmed_sentence = ' '.join(stemmed_words)
+print("Stemmed sentence:", stemmed_sentence)
