@@ -1,0 +1,12 @@
+import re
+
+def parse_early(text):
+    pattern = r"(?P<name>\w+)\s+(?P<age>\d+)\s+(?P<city>\w+)"
+    matches = re.findall(pattern, text)
+    result = []
+    for match in matches:
+        name, age, city = match
+        result.append({"name": name, "age": int(age), "city": city})
+    return result
+text = "Alice 30 New York, Bob 25 London, Charlie 35 Paris"
+print(parse_early(text))
