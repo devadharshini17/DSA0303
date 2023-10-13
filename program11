@@ -1,0 +1,15 @@
+import nltk
+from nltk import word_tokenize, pos_tag, ne_chunk
+user_input = input("Enter a sentence: ")
+words = word_tokenize(user_input)
+pos_tags = pos_tag(words)
+named_entities = ne_chunk(pos_tags)
+def extract_entities(tree):
+    entities = []
+    if hasattr(tree, 'label') and tree.label() is not None:
+        entities.append(' '.join([child[0] for child in tree]))
+    for child in tree:
+        entities.extend(extract_entities(child))
+    return entities
+entities = extract_entities(named_entities)
+print("Named Entities:", entities)
