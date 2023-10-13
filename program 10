@@ -1,0 +1,10 @@
+import nltk
+from nltk.stem import WordNetLemmatizer
+nltk.download('wordnet') 
+lemmatizer = WordNetLemmatizer()
+user_input = input("Enter a sentence: ")
+words = nltk.word_tokenize(user_input)
+lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
+lemmatized_sentence = ' '.join(lemmatized_words)
+print("Original Input:", user_input)
+print("Lemmatized Sentence:", lemmatized_sentence)
