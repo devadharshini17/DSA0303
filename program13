@@ -1,0 +1,5 @@
+from gensim.summarization import summarize
+user_input = input("Enter the text you want to summarize: ")
+summary = summarize(user_input)
+print("Summary:")
+print(summary)
