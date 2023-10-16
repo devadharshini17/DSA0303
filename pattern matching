@@ -1,0 +1,10 @@
+import re
+text = input("Enter text: ")
+pattern = input("Enter pattern: ")
+compiled_pattern = re.compile(pattern)
+matches = compiled_pattern.findall(text)
+print("Matches:", matches)
+if compiled_pattern.search(text):
+    print("Pattern found in text.")
+else:
+    print("Pattern not found in text.")
